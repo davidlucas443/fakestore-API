@@ -135,18 +135,7 @@ A aplicação faz a seguinte requisição:
 fetch('https://fakestoreapi.com/products')
 ```
 
-Exemplo de resposta da API:
 
-```json id="exemplo-json"
-[
-  {
-    "id": 1,
-    "title": "Produto exemplo",
-    "price": 29.99,
-    "image": "https://..."
-  }
-]
-```
 
 ---
 
