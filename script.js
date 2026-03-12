@@ -22,13 +22,17 @@ async function carregarProdutos() {
     loadingProduto.style.display = 'none';
 
     // Renderizando os produtos no DOM
-    produto.innerHTML = data.map(item => `
+    produto.innerHTML = data.map(item => {
+      // Pegando apenas as 4 primeiras palavras do título
+      const palavras = item.title.split(' ').slice(0, 4).join(' ');
+      return `
       <div class="produto-card">
-        <h2>${item.title}</h2>
+        <h2>${palavras}</h2>
         <p>Preço: $${item.price}</p>
         <img src="${item.image}" alt="${item.title}" style="max-width: 200px;">
       </div>
-    `).join('');
+    `;
+    }).join('');
 
   } catch (err) {
     // Escondendo o indicador de carregamento em caso de erro
